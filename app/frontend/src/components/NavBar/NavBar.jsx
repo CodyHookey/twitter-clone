@@ -15,13 +15,13 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div className="row mt-3 mb-3 box-component">
-        <nav className="navbar px-3">
+      <nav className="navbar bg-secondary mb-3 py-3">
+        <div className="container">
           <a className="navbar-brand" href="/">
             Ripple
           </a>
-        </nav>
-      </div>
+        </div>
+      </nav>
     );
   }
 }
