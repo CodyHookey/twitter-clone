@@ -11,7 +11,7 @@ export function jsonHeader(options = {}) {
 
 export function getMetaContent(name) {
   const header = document.querySelector(`meta[name="${name}"]`);
-  return header && header.textContent;
+  return header && header.content;
 }
 
 export function getAuthenticityToken() {

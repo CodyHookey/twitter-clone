@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     # USERS
-    post '/users' => 'users#create'
+    post '/signup' => 'users#create'
 
     # SESSIONS
-    post '/sessions' => 'sessions#create'
+    post '/login' => 'sessions#create'
     get '/authenticated' => 'sessions#authenticated'
-    delete '/sessions' => 'sessions#destroy'
+    delete '/logout' => 'sessions#destroy'
 
     # TWEETS
     post '/tweets' => 'tweets#create'
