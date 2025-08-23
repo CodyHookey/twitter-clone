@@ -3,7 +3,7 @@ import React from "react";
 class Footer extends React.Component {
   render() {
     return (
-      <footer className="text-center py-3 bg-secondary">
+      <footer className="text-center py-3">
         <div className="container">
           <p className="mb-1">© 2025 Ripple. All rights reserved.</p>
           <a href="/privacy-policy" className="mx-2">

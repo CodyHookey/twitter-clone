@@ -4,6 +4,30 @@
     Arial, sans-serif;
 }
 
+a {
+  color: #1f2937;
+}
+
+a:hover {
+  color: #3b82f6;
+}
+
+h1 {
+  color: #1f2937;
+}
+
+p {
+  color: #1f2937;
+}
+
+button {
+  background-color: #3b82f6;
+}
+
+button:hover {
+  background-color: #2676f6;
+}
+
 // Custom Styles
 .box-component {
   border-radius: 6px;
@@ -12,3 +36,19 @@
 }
 
 // NavBar
+.navbar {
+  background-color: #f9fafb;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
+
+// Footer
+footer {
+  background-color: #f9fafb;
+
+  p {
+    color: #1f2937;
+  }
+}

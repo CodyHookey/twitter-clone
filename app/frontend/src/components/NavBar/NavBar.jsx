@@ -15,7 +15,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar bg-secondary mb-3 py-3">
+      <nav className="navbar mb-3 py-3">
         <div className="container">
           <a className="navbar-brand" href="/">
             Ripple
