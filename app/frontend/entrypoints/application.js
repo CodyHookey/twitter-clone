@@ -43,4 +43,4 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Import Bootstrap JavaScript
 import "bootstrap";
 
-import "../styles/global.scss";
+import "./global.scss";

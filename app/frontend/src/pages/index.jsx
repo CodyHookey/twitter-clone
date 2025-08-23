@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import NavBar from "../components/NavBar/NavBar";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("root");
@@ -7,7 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const root = createRoot(container);
     root.render(
       <React.StrictMode>
-        <h1>Test</h1>
+        <div className="container">
+          <NavBar />
+        </div>
       </React.StrictMode>
     );
   }

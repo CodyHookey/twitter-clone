@@ -1,1 +1,1 @@
-import "../pages/index";
+import "../src/pages/index";
