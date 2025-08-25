@@ -70,7 +70,11 @@ class UserFeed extends React.Component {
 
     return (
       <>
-        {isOwner ? <h2>Your Ripples</h2> : <h2>{username}'s Ripples</h2>}
+        {isOwner ? (
+          <h2 className="mb-5">Your Ripples</h2>
+        ) : (
+          <h2 className="mb-5">{username}'s Ripples</h2>
+        )}
         <div className="feed-container text-start">
           {tweets.length > 0 ? (
             tweets.map((tweet) => {
@@ -106,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
           <div className="flex-fill">
             <div className="container">
               <div className="row my-5 h-100 text-center">
-                <h1>Search Bar Goes Here</h1>
                 <UserFeed username={username} />
               </div>
             </div>
