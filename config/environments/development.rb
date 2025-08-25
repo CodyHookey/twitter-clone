@@ -37,6 +37,20 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+
+  # Looking to send emails in production? Check out our Email API/SMTP product!
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    user_name: => ENV['MAILTRAP_SMTP_LOGIN'],
+    password: => ENV['MAILTRAP_SMTP_PASSWORD'],
+    address: => ENV['MAILTRAP_ADDRESS'],
+    host: => ENV['MAILTRAP_SMTP_HOST'],
+    port: => ENV['MAILTRAP_SMTP_PORT'],
+    authentication: :plain
+  }
+
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.
   config.action_mailer.perform_caching = false

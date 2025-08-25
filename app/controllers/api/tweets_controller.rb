@@ -19,7 +19,7 @@ module Api
 
     def destroy
       token = cookies.signed[:twitter_session_token]
-      sessions = Session.find_by(token: token)
+      session = Session.find_by(token: token)
 
       return render json: {
         success: false

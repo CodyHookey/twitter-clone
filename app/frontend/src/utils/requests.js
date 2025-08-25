@@ -40,3 +40,64 @@ export const userLogin = (username, password) => {
       return response;
     });
 };
+
+export const logout = () => {
+  return fetch(
+    "/api/logout",
+    safeCredentials({
+      method: "DELETE",
+    })
+  )
+    .then(handleErrors)
+    .then((response) => response);
+};
+
+export const fetchTweets = () => {
+  return fetch(
+    "/api/tweets",
+    safeCredentials({
+      method: "GET",
+    })
+  )
+    .then(handleErrors)
+    .then((response) => {
+      return response;
+    });
+};
+
+export const deleteTweet = (id) => {
+  return fetch(
+    `/api/tweets/${id}`,
+    safeCredentials({
+      method: "DELETE",
+    })
+  )
+    .then(handleErrors)
+    .then((response) => {
+      return response;
+    });
+};
+
+export const authenticated = () => {
+  return fetch(
+    "/api/authenticated",
+    safeCredentials({
+      method: "GET",
+    })
+  )
+    .then(handleErrors)
+    .then((response) => {
+      return response;
+    });
+};
+
+export const fetchTweetsByUser = (username) => {
+  return fetch(
+    `/api/users/${username}/tweets`,
+    safeCredentials({
+      method: "GET",
+    })
+  )
+    .then(handleErrors)
+    .then((response) => response);
+};
