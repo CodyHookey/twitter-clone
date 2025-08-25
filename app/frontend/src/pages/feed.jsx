@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import Tweet from "../components/Tweet/Tweet";
 import { fetchTweets, deleteTweet, authenticated } from "../utils/requests";
+import CreateTweetForm from "../components/CreateTweetForm/CreateTweetForm";
 
 class Feed extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Feed extends React.Component {
     this.indexTweets = this.indexTweets.bind(this);
     this.authenticate = this.authenticate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleCreate = this.handleCreate.bind(this);
   }
 
   componentDidMount() {
@@ -45,6 +47,10 @@ class Feed extends React.Component {
     });
   }
 
+  handleCreate() {
+    this.indexTweets();
+  }
+
   handleDelete(id) {
     if (!id) {
       return;
@@ -62,22 +68,27 @@ class Feed extends React.Component {
   render() {
     const { tweets } = this.state;
     return (
-      <div className="feed-container text-start">
-        {tweets.length > 0 ? (
-          tweets.map((tweet) => {
-            return (
-              <Tweet
-                key={tweet.id}
-                tweet={tweet}
-                currentUser={this.state.currentUser}
-                onDelete={this.handleDelete}
-              />
-            );
-          })
-        ) : (
-          <p>No Tweets Added</p>
-        )}
-      </div>
+      <>
+        <CreateTweetForm onCreate={this.handleCreate} />
+        <div className="row my-5 h-100 text-center">
+          <div className="feed-container text-start">
+            {tweets.length > 0 ? (
+              tweets.map((tweet) => {
+                return (
+                  <Tweet
+                    key={tweet.id}
+                    tweet={tweet}
+                    currentUser={this.state.currentUser}
+                    onDelete={this.handleDelete}
+                  />
+                );
+              })
+            ) : (
+              <p>No Tweets Added</p>
+            )}
+          </div>
+        </div>
+      </>
     );
   }
 }
@@ -92,10 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <NavBar />
           <div className="flex-fill">
             <div className="container">
-              <div className="row my-5 h-100 text-center">
-                <h1>Search Bar Goes Here</h1>
-                <Feed />
-              </div>
+              <Feed />
             </div>
           </div>
           <Footer />

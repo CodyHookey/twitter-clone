@@ -1,4 +1,8 @@
-import { safeCredentials, handleErrors } from "./fetchHelper";
+import {
+  safeCredentials,
+  handleErrors,
+  safeCredentialsFormData,
+} from "./fetchHelper";
 
 // User SignUp
 export const userSignUp = (email, username, password) => {
@@ -100,4 +104,18 @@ export const fetchTweetsByUser = (username) => {
   )
     .then(handleErrors)
     .then((response) => response);
+};
+
+export const createTweet = (message) => {
+  return fetch(
+    "/api/tweets",
+    safeCredentials({
+      method: "POST",
+      body: JSON.stringify({
+        tweet: {
+          message: message,
+        },
+      }),
+    })
+  );
 };
