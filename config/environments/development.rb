@@ -43,11 +43,11 @@ Rails.application.configure do
   # Looking to send emails in production? Check out our Email API/SMTP product!
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    user_name: => ENV['MAILTRAP_SMTP_LOGIN'],
-    password: => ENV['MAILTRAP_SMTP_PASSWORD'],
-    address: => ENV['MAILTRAP_ADDRESS'],
-    host: => ENV['MAILTRAP_SMTP_HOST'],
-    port: => ENV['MAILTRAP_SMTP_PORT'],
+    user_name: ENV['MAILTRAP_SMTP_LOGIN'],
+    password: ENV['MAILTRAP_SMTP_PASSWORD'],
+    address: ENV['MAILTRAP_ADDRESS'],
+    host: ENV['MAILTRAP_SMTP_HOST'],
+    port: ENV['MAILTRAP_SMTP_PORT'],
     authentication: :plain
   }
 
